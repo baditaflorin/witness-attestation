@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Witness">
+  <rect width="512" height="512" rx="96" fill="#14342f"/>
+  <path d="M256 64c76.2 0 138 61.8 138 138 0 103.5-138 246-138 246S118 305.5 118 202C118 125.8 179.8 64 256 64Z" fill="#f5c542"/>
+  <circle cx="256" cy="202" r="54" fill="#14342f"/>
+  <path d="M188 314h136" stroke="#f6f3eb" stroke-width="24" stroke-linecap="round"/>
+</svg>
