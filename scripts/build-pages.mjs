@@ -3,16 +3,7 @@ import { execFileSync } from 'node:child_process';
 import process from 'node:process';
 
 const version = process.env.npm_package_version ?? '0.0.0';
-
-let commit = 'local';
-try {
-  commit = execFileSync('git', ['rev-parse', '--short=12', 'HEAD'], {
-    encoding: 'utf8',
-    stdio: ['ignore', 'pipe', 'ignore'],
-  }).trim();
-} catch {
-  // The first local build can happen before the first commit.
-}
+const commit = process.env.VITE_GIT_COMMIT ?? 'live';
 
 process.env.VITE_APP_VERSION = version;
 process.env.VITE_GIT_COMMIT = commit;
