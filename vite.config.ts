@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
@@ -7,8 +7,9 @@ export default defineConfig({
   build: {
     assetsDir: 'assets',
     outDir: 'docs',
-    emptyOutDir: true,
-    sourcemap: true,
+    emptyOutDir: false,
+    chunkSizeWarningLimit: 700,
+    sourcemap: false,
   },
   plugins: [
     react(),
@@ -37,6 +38,7 @@ export default defineConfig({
       workbox: {
         navigateFallback: '/witness-attestation/index.html',
         globPatterns: ['**/*.{js,css,html,svg,webmanifest}'],
+        globIgnores: ['**/libsodium-wrappers-*.js'],
       },
     }),
   ],
