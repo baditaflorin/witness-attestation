@@ -3,9 +3,9 @@ set -euo pipefail
 
 npm run build
 
-port="${PORT:-4173}"
+port="${PORT:-4187}"
 mkdir -p tmp
-npm run pages-preview -- --port "$port" >tmp/pages-preview.log 2>&1 &
+npm run pages-preview -- --port "$port" --strictPort >tmp/pages-preview.log 2>&1 &
 server_pid="$!"
 
 cleanup() {

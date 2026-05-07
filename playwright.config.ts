@@ -7,13 +7,13 @@ export default defineConfig({
   webServer: skipWebServer
     ? undefined
     : {
-        command: 'npm run pages-preview -- --port 4173',
-        url: 'http://127.0.0.1:4173/witness-attestation/',
+        command: 'npm run pages-preview -- --port 4187 --strictPort',
+        url: 'http://127.0.0.1:4187/witness-attestation/',
         reuseExistingServer: !process.env.CI,
         timeout: 120_000,
       },
   use: {
-    baseURL: 'http://127.0.0.1:4173/witness-attestation/',
+    baseURL: 'http://127.0.0.1:4187/witness-attestation/',
     trace: 'on-first-retry',
   },
   projects: [
