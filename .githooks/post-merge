@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Mode A has no generated clients, sqlc output, or mocks to refresh.

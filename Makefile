@@ -1,4 +1,4 @@
-.PHONY: help install-hooks dev build test test-integration smoke lint fmt pages-preview clean release
+.PHONY: help install-hooks dev build test test-integration smoke lint fmt pages-preview hooks-pre-commit hooks-commit-msg hooks-pre-push clean release
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "%-20s %s\n", $$1, $$2}'
@@ -31,6 +31,15 @@ fmt: ## Autoformat source files
 
 pages-preview: ## Serve docs/ locally as Pages would
 	npm run pages-preview
+
+hooks-pre-commit: ## Run the pre-commit hook manually
+	npm run hooks-pre-commit
+
+hooks-commit-msg: ## Run the commit-msg hook against .git/COMMIT_EDITMSG
+	npm run hooks-commit-msg
+
+hooks-pre-push: ## Run the pre-push hook manually
+	npm run hooks-pre-push
 
 release: ## Tag the current commit as v0.1.0
 	git tag v0.1.0

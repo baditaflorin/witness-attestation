@@ -1,0 +1,4 @@
+title = "Witness Attestation gitleaks config"
+
+[extend]
+useDefault = true
